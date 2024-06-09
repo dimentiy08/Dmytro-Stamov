@@ -5,4 +5,4 @@ const removeElement = (array, item) => {
 	console.log(result)
 }
 
-removeElement([1,2,3,4,5,6,7], 1)
+removeElement([7,3,5,2,1,4,6], 2)
