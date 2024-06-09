@@ -10,7 +10,6 @@ const mySumFunction = (sumNumber) => {
 		}
 		if(Array.isArray(sumNumber[i])) {
 			for (let j = 0; j < sumNumber[i].length; j++) {
-				// console.log(sumNumber[i][j])
 				if(typeof sumNumber[i][j] === 'number') {
 					myResult.push(sumNumber[i][j])
 				}
@@ -30,6 +29,6 @@ const mySumFunction = (sumNumber) => {
 	console.log(result);
 }
 
-mySumFunction()
+mySumFunction(['Dmytro', true, 'some text', ['text', false, 1, 2,], ['two', true, 6], {lastname: 'Stamov', age: 3}, 4, 5])
 
 
