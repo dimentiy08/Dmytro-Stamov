@@ -23,10 +23,13 @@ const mySumFunction = (sumNumber) => {
 			}
 		}
 	}
+
 	for (let j = 0; j < myResult.length; j++) {
-		result += myResult[j]
+		result += myResult[j] 
 	}
-	console.log(result);
+	let result2 = result / myResult.length
+
+	console.log(result2);
 }
 
 mySumFunction(['Dmytro', true, 'some text', ['text', false, 1, 2,], ['two', true, 6], {lastname: 'Stamov', age: 3}, 4, 5])
