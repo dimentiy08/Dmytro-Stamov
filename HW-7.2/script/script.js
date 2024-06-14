@@ -12,4 +12,4 @@ const sum = (a, b) => {
 
 let curSum = curFunction(sum)
 
-console.log(curSum(1)(2))
+console.log(curSum(5)(2))
