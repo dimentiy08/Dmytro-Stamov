@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		const button = document.createElement('a')
 		button.classList.add('btn', 'btn-primary', selector)
 		button.textContent = nameButton
+		button.setAttribute('href', "#")
 		container.append(button)
 	}
 
@@ -30,20 +31,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const promptButton = document.querySelector(`.${selector.promptSelector}`)
 	const redirectButton =  document.querySelector(`.${selector.redirectSelector}`)
-	redirectButton.setAttribute('href', "#")
 
 
 	promptButton.addEventListener('click', function() {
 		callPrompt()
 		redirectButton.setAttribute('href', urlPath)
 		redirectButton.textContent = `Navigate to ${myPrompt}`
-
+		if(redirectButton.textContent === 'Navigate to null') {
+			redirectButton.textContent = redirectTextButton
+		}
 	})
 
 	redirectButton.addEventListener('click', function() {
 		if(redirectButton.getAttribute('href') === "#" || redirectButton.getAttribute('href') === "https://null" || redirectButton.getAttribute('href') === "https://undefined" || redirectButton.getAttribute('href') === "https://" ) {
 			redirectButton.setAttribute('href', '#')
-			console.log('You have not selected a site');
 		}
 	})
 })
