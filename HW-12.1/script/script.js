@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const container = document.querySelector('.container')
 	const promptTextButton = 'Type your URL'
-	const redirectTextButton = 'Navigate'
+	const redirectTextButton = 'Navigate to'
 	
 	
 	let myPrompt
