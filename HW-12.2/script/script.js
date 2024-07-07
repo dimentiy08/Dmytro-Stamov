@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	const container = document.querySelector('.container')
 	let button 
+	let i
 	const createButton = () => {
 					button = document.createElement('button')
 					button.classList.add('btn', 'btn-primary')
@@ -8,12 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
 					return button
 	}
 	
-	for (let i = 1; i <= 3; i++) {
+	for (i = 1; i <= 3; i++) {
 		createButton()
 		button.textContent = `button ${i}`
 	}
-	button.addEventListener('clcik', function() {
-		console.log(`click on button ${i}`);
-	})
+
+	let allButtons = document.querySelectorAll('.btn')
+
+	allButtons.forEach(element => {
+		element.addEventListener('click', function(e) {
+			console.log(`You clicked on ${e.target.textContent}`);
+		})
+	});
 })
 
