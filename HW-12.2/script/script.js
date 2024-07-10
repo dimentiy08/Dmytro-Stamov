@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		button.textContent = `button ${i}`
 	}
 
-	let allButtons = document.querySelectorAll('.btn')
+	let containerE = document.querySelectorAll('.container')
 
-	allButtons.forEach(element => {
+	containerE.forEach(element => {
 		element.addEventListener('click', function(e) {
 			console.log(`You clicked on ${e.target.textContent}`);
 		})

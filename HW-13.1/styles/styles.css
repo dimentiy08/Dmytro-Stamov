@@ -1,0 +1,26 @@
+.js-container {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	margin: 0 auto;
+	background-image: linear-gradient(to bottom, #bdbfc2, #bbc1c4, #b9c4c3, #bbc6c0, #c2c6bb);
+	margin-top: 50px;
+	border-radius: 10px;
+
+}
+
+h1{
+	text-align: center;
+	margin-top: 70px;
+}
+
+.js-inputs {
+	display: flex;
+	margin: 0 auto;
+	width: 450px;
+	height: 40px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	border: none;
+	border-radius: 10px;
+}
