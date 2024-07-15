@@ -6,111 +6,99 @@ const inputsAll = document.querySelectorAll('.form-f  input ')
 const intextAreaAll = document.querySelectorAll('.form-f  textarea ')
 
 
-
-
-
-function validateFirstNameInput(input) {
-const firstNameRegex = /^[A-Z][a-zA-Z'-]*$/;
-const errorElem = input.nextElementSibling
-let inputText = input.value
-	if(firstNameRegex.test(inputText)) {
-		input.classList.remove('is-invalid')
-		errorElem.textContent = ''
-		input.classList.add('is-valid') 
-	} else if (inputText.length === 0 || inputText.length < 1 || inputText.length > 50) {
-		input.classList.add('is-invalid')
-		errorElem.textContent = 'The First name field must be 1-50 characters and not empty'
-		console.log(errorElem);
-	} else {
-
-		input.classList.add('is-invalid')
-		errorElem.textContent = 'Invalid first name input'
-		console.log(errorElem);
-	}
+const invalidMessages = {
+	firstNameLength: 'The First name field must be 1-50 characters and not empty',
+	firstName: 'Invalid first name input',
+	phone: 'Invalid telephone number',
+	email: 'Email must contain @ and a dot.',
+	textAria: 'Oops less than 5 characters'
 }
 
 
 
-function validateTelInput(input) {
+function isValidateFirstNameInput(input) {
+	const firstNameRegex = /^[A-Z][a-zA-Z'-]*$/
+	let inputText = input.value
+	return firstNameRegex.test(inputText)
+}
+
+
+
+function isValidateTelInput(input) {
 	const phoneRegex = /^\+380\d{9}$/
-	const errorElem = input.nextElementSibling
 	let inputText = input.value
-
-	if(phoneRegex.test(inputText)) {
-		input.classList.remove('is-invalid')
-		errorElem.textContent = ''
-		input.classList.add('is-valid') 
-	} else {
-		input.classList.add('is-invalid')
-		errorElem.textContent = 'Invalid telephone number'
-		console.log(errorElem);
-	}
+	return phoneRegex.test(inputText)
 }
 
 
-function validateEmailInput(input) {
+function isValidateEmailInput(input) {
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-	const errorElem = input.nextElementSibling
 	let inputText = input.value
-	if(emailRegex.test(inputText)) {
-		input.classList.remove('is-invalid')
-		errorElem.textContent = ''
-		input.classList.add('is-valid') 
-	} else {
-		input.classList.add('is-invalid')
-		errorElem.textContent = 'Email must contain @ and a dot.'
-		console.log(errorElem);
-	}
+	return emailRegex.test(inputText)
 }
 
 
-function validateTextarea(input) {
-	const messageRegex = /^.{5,}$/;
-	const errorElem = input.nextElementSibling
+function isValidateTextarea(input) {
+	const messageRegex = /^.{5,}$/
 	let inputText = input.value
-	if(messageRegex.test(inputText)) {
-		input.classList.remove('is-invalid')
-		errorElem.textContent = ''
-		input.classList.add('is-valid') 
-	} else {
-		input.classList.add('is-invalid')
-		errorElem.textContent = 'Oops less than 5 characters.'
-		console.log(errorElem);
-	}
+	return messageRegex.test(inputText)
 }
 
+
+
+function invalidMessage(input, message) {
+	const errorElem = input.nextElementSibling
+	input.classList.add('is-invalid')
+	errorElem.textContent = message
+}
+
+function validMessage(input) {
+	const errorElem = input.nextElementSibling
+	input.classList.remove('is-invalid')
+	errorElem.textContent = ''
+	input.classList.add('is-valid') 
+}
 
 
 
 function validateInputs(input) {
 	switch (input.getAttribute('type') || input.getAttribute('name')) {
 		case 'text':
-			validateFirstNameInput(input)
+			if (isValidateFirstNameInput(input)) {
+				validMessage(input)
+			} else {
+				invalidMessage(input, invalidMessages.firstName )
+			}
 			break;
-		
 		case 'tel':
-			validateTelInput(input)
+			if (isValidateTelInput(input)) {
+				validMessage(input)
+			} else {
+				invalidMessage(input, invalidMessages.phone )
+			}
 			break;
-
 		case 'email':
-			validateEmailInput(input)
+			if (isValidateEmailInput(input)) {
+				validMessage(input)
+			} else {
+				invalidMessage(input, invalidMessages.email )
+			}
 			break;
-
 		case 'message':
-			validateTextarea(input)
+			if (isValidateTextarea(input)) {
+				validMessage(input)
+			} else {
+				invalidMessage(input, invalidMessages.textAria )
+			}
 			break;
-				
 		default:
 			break;
 	}
 }
 
 
-
 formElements.addEventListener('submit', (e) => {
 	e.preventDefault()
-	console.log(e)
-	console.log(inputsAll, intextAreaAll)
 
 
 	inputsAll.forEach((input) => {
@@ -120,6 +108,8 @@ formElements.addEventListener('submit', (e) => {
 
 	intextAreaAll.forEach((input) => {
 		console.log(input.value)
-		validateTextarea(input)
+		validateInputs(input)
 	})
 })
+
+
