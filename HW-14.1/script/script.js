@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	const elem = document.querySelectorAll('.circle')
 	
 	const circleElem = (forNum) => {
+		document.getElementById("next").disabled = false;
+		document.getElementById("prev").disabled = false;
 
 		elem.forEach((el) => {
 		const activeSlide = document.querySelector('[data-active]')
