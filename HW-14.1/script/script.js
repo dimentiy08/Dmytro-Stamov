@@ -96,6 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	carusel.addEventListener('click', (e) => {
 
+		e.preventDefault()
+
 		if(e.target === nextButton) {
 			nextPhoto(1)
 		}
