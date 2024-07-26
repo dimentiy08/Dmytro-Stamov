@@ -4,6 +4,7 @@
 	const form = document.querySelector('.form')
 	const ulEl = document.querySelector('.js--todos-wrapper')
 	
+	
 	const task = JSON.parse(localStorage.getItem('task')) || []
 	
 	function saveTask() {
@@ -11,9 +12,6 @@
 	}
 	
 	function renderTask() {
-		const getButtonElem = document.querySelectorAll('.todo-item__delete')
-		const getCheckerElem = document.querySelectorAll('.checkbox')
-
 		ulEl.innerHTML = ''
 		task.forEach((tasks, index) => {
 			const liEl = document.createElement('li')
@@ -36,6 +34,9 @@
 			liEl.append(checkerEl, spanEl, button)
 			spanEl.innerHTML = tasks.taskText
 		})
+
+		const getButtonElem = document.querySelectorAll('.todo-item__delete')
+		const getCheckerElem = document.querySelectorAll('.checkbox')
 
 		getButtonElem.forEach(buttons => {
 			buttons.addEventListener('click', function(e) {
@@ -65,6 +66,8 @@
 	}	
 	
 	renderTask()
+	
+	
 
 	form.addEventListener('submit', function(e) {
 		e.preventDefault()
@@ -78,6 +81,7 @@
 			renderTask()
 		}
 	})
+
 
 
 
