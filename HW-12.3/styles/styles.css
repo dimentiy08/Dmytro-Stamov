@@ -1,0 +1,11 @@
+.container {
+	margin-top: 60px;
+	background-color: beige;
+}
+h1 {
+	margin-top: 10px;
+}
+
+li {
+	list-style: none;
+}

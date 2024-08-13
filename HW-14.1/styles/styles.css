@@ -1,0 +1,206 @@
+body  html{
+	background-color: blanchedalmond;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+.container{
+	display: flex;
+	width: 800px;
+	height: 250px;
+	margin: 0 auto;
+	background-color: azure;
+	border-radius: 50px;
+	align-items: center;
+	justify-content: space-around;
+}
+
+
+
+.content-1 {
+	width: 50%;
+	height: 90%;
+	background-image: url(../img/1.jpg);
+	background-size: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.content-2 {
+	width: 50%;
+	height: 90%;
+	background-image: url(../img/2.jpg);
+	background-size: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.content-3 {
+	width: 50%;
+	height: 90%;
+	background-image: url(../img/3.jpg);
+	background-size: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.content-4 {
+	width: 50%;
+	height: 90%;
+	background-image: url(../img/4.jpg);
+	background-size: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.content-5 {
+	width: 50%;
+	height: 90%;
+	background-image: url(../img/5.jpg);
+	background-size: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.content-6 {
+	width: 50%;
+	height: 90%;
+	background-image: url(../img/6.jpg);
+	background-size: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.content-7 {
+	width: 50%;
+	height: 90%;
+	background-image: url(../img/7.jpg);
+	background-size: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+body, html{
+	background-color: blanchedalmond;
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+.carusel {
+	display: flex;
+	justify-content: space-around;
+	width: 700px;
+	height: 700px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.carusel ul { 
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.slide {
+	position:absolute;
+	opacity: 0;
+	inset: 0;
+	transition: 1540ms opacity ease-in-out;
+
+}
+
+.slide[data-active] {
+	opacity: 1;
+	z-index: 1;
+}
+
+.slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.carusel-button {
+	position: absolute;
+	z-index: 2;
+	font-size: 4rem;
+	background: none;
+	background-color: rgba(51, 68, 34, 0.4);
+	border: none;
+	top: 50%;
+	color: rgba(255, 255, 255, 0.747);
+	cursor: pointer;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.carusel-button:hover,
+.carusel-button:focus {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carusel-button.next {
+	right: 1rem;
+}
+
+.carusel-button.prev {
+	left: 1rem;
+}
+
+
+
+
+/* ///////////////////////// */
+
+.circle-container {
+	display: flex;
+	position: absolute;
+	justify-content: center;
+	margin-top: 10px;
+	bottom: 1rem;
+	padding: 10px;
+	z-index: 3;
+	background-color: rgba(51, 68, 34, 0.4);
+	border-radius: 1rem;
+}
+
+.circle {
+	width: 10px;
+	height: 10px;
+	background-color: gray;
+	border-radius: 50%;
+	margin: 0 5px;
+	cursor: pointer;
+	z-index: 3;
+
+}
+
+.circle.active {
+	background-color: rgb(255, 252, 252);
+	z-index: 3;
+
+}
+
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
