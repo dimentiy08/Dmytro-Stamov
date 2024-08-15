@@ -108,10 +108,10 @@ const seaveUpdate = () => {
 			hours.textContent = '0' + currentTime.getHours()
 		}
 
-		if(hours.textContent >= 23 && hours.textContent >= 6) {
+		if(hours.textContent >= 23 || !(hours.textContent > 6)) {
 			container.classList.add('background')
 		} else {
-			container.classList.add('container')
+			container.classList.remove('background')
 		}
 }
 
