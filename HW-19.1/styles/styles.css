@@ -108,17 +108,40 @@ body {
 }
 
 .current-time {
+	display: flex;
+	width: 180px;
 	padding: 10px;
-	font-size: 120px;
+	font-size: 100px;
 	font-weight:300;
+	justify-content: space-between;
+	align-items: center	;
+}
+
+.divider {
+	font-size: 50px;
+	opacity: 1;
+  animation: blink 1s infinite;
+}
+
+.hour-container {
+	display: flex;
+	width: 80px;
+	justify-content: center;
+}
+
+.minutes-container {
+	width: 80px;
+	display: flex;
+	justify-content: center;
+
 }
 
 .hours {
-	position: relative;
+
 }
 
 .minutes {
-	margin-left: 22px;
+
 }
 
 .humidity {
@@ -225,18 +248,20 @@ body {
 	width: 30px;
 	height: 30px;
 	top: 10px;
-	left: 35px;
+	left: 55px;
 }
 
-.hours::after {
+
+/* .hour-container::after {
 	content: ':';
 	display: block;
+	font-size: 60px;
 	position: absolute;
-	top: 0px;
-	left: 114px;
+	top: 32px;
+	left: 83px;
 	opacity: 1;
   animation: blink 1s infinite;
-}
+} */
 
 .power::before  {
 	content: '';
