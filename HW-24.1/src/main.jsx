@@ -1,10 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import Input from './Input.jsx'
 import './index.css'
+import Title from './Title.jsx'
+import CodeAria from './Code-text-aria.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Title />
+    <Input />
+    <CodeAria />
   </React.StrictMode>,
 )
